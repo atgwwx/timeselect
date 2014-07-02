@@ -1,0 +1,17 @@
+{
+    "name": "timeselect",
+    "comName":"Timeselect",
+    "version": "1.0",
+    "desc": "",
+    "tag":"timeselect",
+    "githubName":"atgwwx",
+    "author": {
+        "name": "灵影",
+        "email": "luntao.dlt@alibaba-inc.com",
+        "page": ""
+    },
+	"flexComboPort":"8081",
+	"reserveServerPort":"8080",
+    "type": "kissy-gallery",
+    "type-url": "http://gallery.kissyui.com/guide"
+}
