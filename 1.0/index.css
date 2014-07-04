@@ -42,6 +42,13 @@ ul {
 	height: 10px;
 	position: relative;
 	cursor: pointer;
+	text-align: center;
+} 
+.timecontent .timecontent-item .time-tip{
+	position: relative;
+	z-index: 1;
+	//color: #fff;
+	font: normal 15px arial
 }
 .timecontent .timecontent-item.lastone {
 	border: none;

@@ -15,12 +15,12 @@
 }
 .newTime {
     display: inline-block;
+    float: left;
 }
 </style>
 </head>
 <body>
 <h2>Timeselect的demo</h2>
-<button onclick="addTimeSelect();">新增</button>
 <div class="newTime" id="newTime">
 </div>
 <div class="newTime" id="newTime2"></div>
@@ -60,9 +60,8 @@ function addTimeSelect(conf) {
     });
 }
 addTimeSelect({id:'newTime', width:200, bgColor:'#fff'});
-addTimeSelect({id:'newTime2', width:200});
+addTimeSelect({id:'newTime2', width:200, startTime:7});
 addTimeSelect({id:'newTime3', width:300, bgColor:'#ddd'});
-
 </script>
 </body>
 </html>
