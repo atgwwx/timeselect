@@ -206,7 +206,7 @@ KISSY.add(function (S, DOM, Event, Base) {
         },
         //是否活动可选
         isActived: function (el) {
-            if (DOM.hasClass(el, 'unactived')) {
+            if (DOM.hasClass(el, 'unactived') || DOM.hasClass(el, 'disable')) {
                 return false;
             } else  {
                 return true;
@@ -310,6 +310,7 @@ KISSY.add(function (S, DOM, Event, Base) {
                 linkArr = self._timeToArray(obj.minTime, obj.maxTime);
                 self._setSelectedTime(linkArr);
                 self._setProgress(linkArr, obj.percent);
+                self._setDisable(linkArr, obj.disable);
                 self._setTimeTip(obj);
                 //self.set('allSelectedTime', linkArr);
                 self._setAllSelectedTime(linkArr);
@@ -332,12 +333,17 @@ KISSY.add(function (S, DOM, Event, Base) {
             });
         },
         //设置时间段不可再配置
-        _setDisable: function (arr) {
+        _setDisable: function (arr, disable) {
             var self = this;
             var map = listToMap(arr);
             S.each(self.listEl, function (el) {
                 if (map[DOM.attr(el, 'data-num')]) {
-                    DOM.addClass(el, 'disable');
+                    if (disable === true) {
+                        DOM.addClass(el, 'disable');
+                    } else {
+                        DOM.removeClass(el, 'disable');
+                    }
+                   
                 }
             });
         },
