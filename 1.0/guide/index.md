@@ -10,6 +10,7 @@ Timeselect是一个时间段选择控件，通过Timeselect可以非常方便通
 		
     S.use('gallery/timeselect/1.0/index', function (S, Timeselect) {
          var timeselect = new Timeselect({
+               container:"#content",
          		hideTimeline:false, //不隐藏时间线
          		width:200, //宽度为：200px
          		startTime:8, //开始时间：8点
@@ -22,6 +23,8 @@ Timeselect是一个时间段选择控件，通过Timeselect可以非常方便通
 ## API说明
 
 ### 配置参数
+`container`: 父容器，类型：string/HTMLElement/NodeList
+
 `hideTimeline`:是否隐藏时间线，类型：boolean,default:false
 
 `width`:组件宽度，类型：number,default:300
