@@ -2,15 +2,15 @@
     "name": "timeselect",
     "comName":"Timeselect",
     "version": "1.0",
-    "desc": "",
+    "desc": "时间选择组件",
     "tag":"timeselect",
     "githubName":"atgwwx",
     "author": {
         "name": "灵影",
         "email": "luntao.dlt@alibaba-inc.com",
-        "page": ""
+        "page": "https://github.com/atgwwx"
     },
-    "cover":"http://img02.taobaocdn.com/tps/i2/T1C1X_Xs8gXXcd0fwt-322-176.png",
+    "cover":"http://img01.daily.taobaocdn.net/tfscom/TB12umCXXXXXXbGXXXXXXXXXXXX.png",
 	"flexComboPort":"8081",
 	"reserveServerPort":"8080",
     "type": "kissy-gallery",
