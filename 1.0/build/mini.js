@@ -1,9 +1,16 @@
+/*
+combined files : 
+
+gallery/timeselect/1.0/index
+gallery/timeselect/1.0/mini
+
+*/
 /**
  * @fileoverview 
  * @author 灵影<luntao.dlt@alibaba-inc.com>
  * @module timeselect
  **/
-KISSY.add(function (S, Node, DOM, Event, Base) {
+KISSY.add('gallery/timeselect/1.0/index',function (S, Node, DOM, Event, Base) {
     var EMPTY = '';
     /**
      * 
@@ -109,6 +116,7 @@ KISSY.add(function (S, Node, DOM, Event, Base) {
                     }
                 } else {
                     var num = DOM.attr(target, 'data-num');
+                    console.log(self._getTimeObjByNum(num));
                     self.fire('click', self._getTimeObjByNum(num));
                 }
             });
@@ -154,15 +162,19 @@ KISSY.add(function (S, Node, DOM, Event, Base) {
             var self = this;
             //选择结束
             self.on('select', function (data) {
+                console.log('select');
             });
             //点击时间选中区域
             self.on('click', function (data) {
+                console.log('click',data.num);
             });
             //用户取消时间段
             self.on('cancle', function (data) {
+                this.clearTime();
             });
             //用户确定时间
             self.on('sure', function (data) {
+                this.saveTime();
             });
             //时间段内人数配置{num:11,percent:50}
             self.on('config', function (conf) {
@@ -515,6 +527,7 @@ KISSY.add(function (S, Node, DOM, Event, Base) {
 
             },
             getter: function () {
+                console.log(this.allTimeObj);
                 return this.allSelectedTime;
             }
         }
@@ -536,3 +549,16 @@ KISSY.add(function (S, Node, DOM, Event, Base) {
 
 
 
+
+/**
+ * @fileoverview 
+ * @author 灵影<luntao.dlt@alibaba-inc.com>
+ * @module timeselect
+ **/
+KISSY.add('gallery/timeselect/1.0/mini',function(S, Component) {
+
+  return Component;
+
+}, {
+  requires: ["./index"]
+});

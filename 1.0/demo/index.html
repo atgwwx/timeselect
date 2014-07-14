@@ -45,36 +45,62 @@
           new Timeselect();
     });
 
-    S.use('gallery/timeselect/1.0/index', function (S, Timeselect) {
+    S.use('gallery/timeselect/1.0/index, node', function (S, Timeselect, Node) {
           //初始化
         var timeSelect1 = new Timeselect(
             {
-                id:'newTime', 
+                container:Node.all('#newTime'), 
                 width:200, 
                 bgColor:'#fff'
             });
+        timeSelect1.init([{
+                minTime:'9:00', 
+                maxTime:'10:45',
+                data:{name:12}
+            },{
+                minTime:'11:00', 
+                maxTime:'12:45',
+                data:{name:12}
+            },{
+                minTime:'13:00', 
+                maxTime:'16:45',
+                data:{name:12}
+            }]);
             //隐藏时间轴
         var timeSelect2 = new Timeselect(
             {
-                id:'newTime2', 
+                container:'#newTime2', 
                 hideTimeLine:false, 
-                width:200, 
-                startTime:7
+                width:200
             })
             timeSelect2.init([{
                 minTime:'8:00', 
-                maxTime:'10:00',
+                maxTime:'10:15',
                 percent:50, 
-                data:{name:12},
                 disable:true
+            },{
+                minTime:'11:00', 
+                maxTime:'13:15',
+                percent:70, 
             }]);
             //
         var timeSelect3 = new Timeselect(
             {
-                id:'newTime3', 
+                container:'#newTime3', 
                 width:300, 
-                bgColor:'#ddd'
             });
+
+            timeSelect3.init([{
+                minTime:'10:00', 
+                maxTime:'13:15',
+                percent:0, 
+                disable:true
+            },{
+                minTime:'14:00', 
+                maxTime:'16:15',
+                percent:0, 
+                disable:false
+            }]);
 
     });
 </script>
