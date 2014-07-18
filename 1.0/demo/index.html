@@ -66,6 +66,9 @@
                 maxTime:'16:45',
                 data:{name:12}
             }]);
+        timeSelect1.on('select', function () {
+            timeSelect1.saveTime();
+        });
             //隐藏时间轴
         var timeSelect2 = new Timeselect(
             {
@@ -83,6 +86,9 @@
                 maxTime:'13:15',
                 percent:70, 
             }]);
+        timeSelect2.on('select', function () {
+            timeSelect2.saveTime();
+        });
             //
         var timeSelect3 = new Timeselect(
             {
@@ -101,6 +107,9 @@
                 percent:0, 
                 disable:false
             }]);
+        timeSelect3.on('select', function () {
+            timeSelect3.saveTime();
+        });
 
     });
 </script>
